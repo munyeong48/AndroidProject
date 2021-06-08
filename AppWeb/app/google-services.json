@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1020969679470",
+    "firebase_url": "https://appnwebtest-5859a.firebaseio.com",
+    "project_id": "appnwebtest-5859a",
+    "storage_bucket": "appnwebtest-5859a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020969679470:android:0074eec2ad91f0817b847f",
+        "android_client_info": {
+          "package_name": "com.example.appweb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020969679470-2tm2fk816aido2vv7h2r105rec1b39o5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhlhUndnEAjGfgLZcTYcZJv_6_DxkTBy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020969679470-2tm2fk816aido2vv7h2r105rec1b39o5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1020969679470-p14ed98d96vuh6o148csirsdat7hthq0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.goldenplanet.Measurment-Protocol"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

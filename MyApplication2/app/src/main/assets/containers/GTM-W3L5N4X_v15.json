@@ -1,0 +1,2720 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2020-06-05 05:57:40",
+    "containerVersion": {
+        "path": "accounts/6000365422/containers/30393019/versions/15",
+        "accountId": "6000365422",
+        "containerId": "30393019",
+        "containerVersionId": "15",
+        "description": "구글애널리틱스 설정변수수정",
+        "container": {
+            "path": "accounts/6000365422/containers/30393019",
+            "accountId": "6000365422",
+            "containerId": "30393019",
+            "name": "myshin",
+            "publicId": "GTM-W3L5N4X",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1578880420712",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6000365422/containers/30393019/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "tagId": "5",
+                "name": "페이지뷰",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Google 애널리틱스 설정}}"
+                    }
+                ],
+                "fingerprint": "1583916669460",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "tagId": "16",
+                "name": "이벤트1",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "{{layerCategory}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Google 애널리틱스 설정}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{layerAction}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{layerLabel}}"
+                    }
+                ],
+                "fingerprint": "1584598183296",
+                "firingTriggerId": [
+                    "46"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "tagId": "34",
+                "name": "가상페이지뷰",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{virtuallocation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{virtualtitle}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Google 애널리틱스 설정}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-155376157-1"
+                    }
+                ],
+                "fingerprint": "1583122220976",
+                "firingTriggerId": [
+                    "52"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "tagId": "45",
+                "name": "이벤트2",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "{{layerCategory}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Google 애널리틱스 이벤트2}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{layerAction}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{layerLabel}}"
+                    }
+                ],
+                "fingerprint": "1578966236217",
+                "firingTriggerId": [
+                    "47"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "tagId": "48",
+                "name": "전자상거래",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "{{layerCategory}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Google 애널리틱스 설정}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{layerAction}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{layerLabel}}"
+                    }
+                ],
+                "fingerprint": "1578967512961",
+                "firingTriggerId": [
+                    "30"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "tagId": "56",
+                "name": "카트 추가",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "{{layerCategory}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Google 애널리틱스 설정}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{layerAction}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{layerLabel}}"
+                    }
+                ],
+                "fingerprint": "1578987397353",
+                "firingTriggerId": [
+                    "54"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "tagId": "57",
+                "name": "카트 제거",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "{{layerCategory}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Google 애널리틱스 설정}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{layerAction}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{layerLabel}}"
+                    }
+                ],
+                "fingerprint": "1578987437802",
+                "firingTriggerId": [
+                    "55"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "tagId": "61",
+                "name": "getcid",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nfunction getCookie(c_name){\n\t\tvar i,x,y,ARRcookies=document.cookie.split(\";\");\n\t\tfor (i=0;i<ARRcookies.length;i++) {\n\t\t\tx=ARRcookies[i].substr(0,ARRcookies[i].indexOf(\"=\"));\n\t\t\ty=ARRcookies[i].substr(ARRcookies[i].indexOf(\"=\")+1);\n\t\t\tx=x.replace(/^\\s+|\\s+$/g,\"\");\n\t\t\tif (x==c_name) { \n\t\t\t\treturn unescape(y);\n\t\t\t}\n\t\t}\n\t}\n\tif(getCookie('_ga_cid')!=undefined) {\n\t\talert(getCookie('_ga_cid'));\n\t}\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1583993798541",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "triggerId": "30",
+                "name": "전자상거래 이벤트",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ga_event"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1578966204805"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "triggerId": "46",
+                "name": "ga_event1",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ga_event1"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1578966176219"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "triggerId": "47",
+                "name": "ga_event2",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ga_event2"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1578966193476"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "triggerId": "52",
+                "name": "가상페이지뷰",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ga_virtual"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1578969734392"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "triggerId": "54",
+                "name": "addToCart",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "addToCart"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1578987322511"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "triggerId": "55",
+                "name": "removeFromCart",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "removeFromCart"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1578987340830"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "triggerId": "74",
+                "name": "요소공개 트리거",
+                "type": "ELEMENT_VISIBILITY",
+                "fingerprint": "1583904883162",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useOnScreenDuration",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDomChangeListener",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "firingFrequency",
+                        "value": "MANY_PER_ELEMENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "elementSelector",
+                        "value": "div.landing-books-cover-image"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectorType",
+                        "value": "CSS"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "onScreenRatio",
+                        "value": "50"
+                    }
+                ]
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "triggerId": "77",
+                "name": "창 로드",
+                "type": "PAGEVIEW",
+                "fingerprint": "1583911667893"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "triggerId": "88",
+                "name": "모든 요소",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Classes}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "swiper-button-next"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1583999484244"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "3",
+                "name": "Google 애널리틱스 설정",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{pageTitle}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userId"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{userID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "anonymizeIp"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "referrer"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{Var_referrer}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{document_URL}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "campaignName"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{utm_campaign}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "campaignMedium"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{utm_medium}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "campaignSource"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{utm_source}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension1}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension2}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "3"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension3}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "4"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension4}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "5"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension5}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "6"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension6}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension7}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "8"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension8}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "9"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension9}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "10"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension10}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "11"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension11}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "27"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension27}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "37"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension37}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "51"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension51}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "52"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension52}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "53"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension53}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "16"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension16}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "17"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension17}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "18"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension18}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "19"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension19}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "54"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension54}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "56"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension56}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "57"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension57}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-155376157-1"
+                    }
+                ],
+                "fingerprint": "1590973380171"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "12",
+                "name": "layerCategory",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "layerCategory"
+                    }
+                ],
+                "fingerprint": "1578892049168",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "13",
+                "name": "layerAction",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "layerAction"
+                    }
+                ],
+                "fingerprint": "1578892024134",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "14",
+                "name": "layerLabel",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "layerLabel"
+                    }
+                ],
+                "fingerprint": "1578892002957",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "18",
+                "name": "dimension1",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension1"
+                    }
+                ],
+                "fingerprint": "1578893987905",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "19",
+                "name": "dimension2",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension2"
+                    }
+                ],
+                "fingerprint": "1578894174735",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "20",
+                "name": "dimension3",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension3"
+                    }
+                ],
+                "fingerprint": "1578894188326",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "21",
+                "name": "dimension4",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension4"
+                    }
+                ],
+                "fingerprint": "1578894200829",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "22",
+                "name": "dimension5",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension5"
+                    }
+                ],
+                "fingerprint": "1578894216230",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "23",
+                "name": "dimension6",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension6"
+                    }
+                ],
+                "fingerprint": "1578894228106",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "24",
+                "name": "dimension7",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension7"
+                    }
+                ],
+                "fingerprint": "1578894247155",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "25",
+                "name": "dimension8",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension8"
+                    }
+                ],
+                "fingerprint": "1578894260807",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "26",
+                "name": "dimension9",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension9"
+                    }
+                ],
+                "fingerprint": "1578894274874",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "27",
+                "name": "dimension10",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension10"
+                    }
+                ],
+                "fingerprint": "1578894289057",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "28",
+                "name": "userID",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userID"
+                    }
+                ],
+                "fingerprint": "1578894313619",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "29",
+                "name": "pageTitle",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "pageTitle"
+                    }
+                ],
+                "fingerprint": "1578894330313",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "32",
+                "name": "Google 애널리틱스 이벤트1",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{pageTitle}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userId"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{userID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "anonymizelp"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension1}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension2}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "3"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension3}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "4"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension4}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-155376157-1"
+                    }
+                ],
+                "fingerprint": "1578965929846"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "33",
+                "name": "Google 애널리틱스 가상페이지설정",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userID"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{userID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{pageTitle}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "anonymizelp"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "location"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{locationurl}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "11"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension11}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "12"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension12}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "13"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension13}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-155376157-1"
+                    }
+                ],
+                "fingerprint": "1578902596724"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "35",
+                "name": "dimension51",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension51"
+                    }
+                ],
+                "fingerprint": "1583116409274",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "36",
+                "name": "dimension37",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension37"
+                    }
+                ],
+                "fingerprint": "1583116395206",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "37",
+                "name": "dimension52",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension52"
+                    }
+                ],
+                "fingerprint": "1583116422515",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "38",
+                "name": "locationurl",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "locationurl"
+                    }
+                ],
+                "fingerprint": "1578902621205",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "40",
+                "name": "dimension16",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension16"
+                    }
+                ],
+                "fingerprint": "1583116449752",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "43",
+                "name": "dimension53",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension53"
+                    }
+                ],
+                "fingerprint": "1583116433338",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "44",
+                "name": "Google 애널리틱스 이벤트2",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "title"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{pageTitle}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userId"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{userID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "anonymizelp"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "7"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension7}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "8"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension8}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "9"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{dimension9}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-155376157-1"
+                    }
+                ],
+                "fingerprint": "1578967666435"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "59",
+                "name": "getCid",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function getCookie() {\n  var x, y;\n  var val = document.cookie.split(';');\n\n  for (var i = 0; i < val.length; i++) {\n    x = val[i].substr(0, val[i].indexOf('='));\n    y = val[i].substr(val[i].indexOf('=') + 7);\n    x = x.replace(/^\\s+|\\s+$/g, ''); // 앞과 뒤의 공백 제거하기\n    if (x == '_ga_cid') {\n      return unescape(y); // unescape로 디코딩 후 값 리턴\n    }\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1588832253663",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "63",
+                "name": "dimension27",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension27"
+                    }
+                ],
+                "fingerprint": "1583116378302",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "64",
+                "name": "dimension17",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension17"
+                    }
+                ],
+                "fingerprint": "1583116494767",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "65",
+                "name": "dimension18",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension18"
+                    }
+                ],
+                "fingerprint": "1583116505561",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "66",
+                "name": "dimension19",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension19"
+                    }
+                ],
+                "fingerprint": "1583116519595",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "67",
+                "name": "dimension11",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension11"
+                    }
+                ],
+                "fingerprint": "1583116551276",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "68",
+                "name": "dimension12",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension12"
+                    }
+                ],
+                "fingerprint": "1583116559416",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "69",
+                "name": "dimension13",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension13"
+                    }
+                ],
+                "fingerprint": "1583116568345",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "70",
+                "name": "virtuallocation",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "virtuallocation"
+                    }
+                ],
+                "fingerprint": "1583122199787",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "71",
+                "name": "virtualtitle",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "virtualtitle"
+                    }
+                ],
+                "fingerprint": "1583122217966",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "89",
+                "name": "dimension56",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension56"
+                    }
+                ],
+                "fingerprint": "1584595519266",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "90",
+                "name": "dimension57",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension57"
+                    }
+                ],
+                "fingerprint": "1584595534535",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "91",
+                "name": "dimension54",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dimension54"
+                    }
+                ],
+                "fingerprint": "1584595548178",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "92",
+                "name": "Var_referrer",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  if({{Page URL}}.indexOf(\"referrer=\") > -1 ) {\n    var tmpRef = {{Page URL}}.split(\"referrer=\")[1];\n    return tmpRef;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1587608567662",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "93",
+                "name": "utm_campaign",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\tvar p = {{Page URL}}\n\tif(p.indexOf('&')>-1){\n      \tfor (var i=0; i<10; i++){\n    \tif(p.split('&')[i].indexOf(\"campaign\") > -1 ){return p.split('&')[i].split('=')[1]}\n        }\n    }\n}"
+                    }
+                ],
+                "fingerprint": "1587609824040",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "94",
+                "name": "utm_source",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\tvar p = {{Page URL}}\n\tp = p.split(\"?\")[2]\n\tif(p.indexOf('&')>-1){\n      \tfor (var i=0; i<10; i++){\n    \tif(p.split('&')[i].indexOf(\"source\") > -1){return p.split('&')[i].split('=')[1]}\n        }\n    }\n}"
+                    }
+                ],
+                "fingerprint": "1587609845620",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "95",
+                "name": "utm_medium",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\tvar p = {{Page URL}}\n\tif(p.indexOf('&')>-1){\n      \tfor (var i=0; i<10; i++){\n    \tif(p.split('&')[i].indexOf(\"medium\") > -1){return p.split('&')[i].split('=')[1]}\n        }\n    }\n}"
+                    }
+                ],
+                "fingerprint": "1587609835357",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "96",
+                "name": "document_URL",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  return(document.URL)\n}"
+                    }
+                ],
+                "fingerprint": "1588831768109",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "99",
+                "name": "var_client",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  function splitHostname() {\n    var result = {};\n    var regexParse = new RegExp('([a-z\\-0-9]{2,63})\\.([a-z\\.]{2,5})$');\n    var urlParts = regexParse.exec(window.location.hostname);\n    if(urlParts !== null && urlParts.length > 1) {\n      result.domain = urlParts[1];\n      result.type = urlParts[2];\n      result.subdomain = window.location.hostname.replace(result.domain + '.' + result.type, '').slice(0, -1);;\n      return result;\n    } else {\n      return undefined;\n    }\n  }\n  \n  function setCookie(cookieName, cookieValue, cookieExpire, cookiePath, cookieDomain){\n    var cookieText=escape(cookieName)+'='+escape(cookieValue);\n    cookieText+=(cookieExpire ? '; EXPIRES='+cookieExpire.toGMTString() : '');\n    cookieText+=(cookiePath ? '; PATH='+cookiePath : '');\n    cookieText+=(cookieDomain ? '; DOMAIN='+cookieDomain : '');\n    document.cookie=cookieText;\n  }\n  \n  function setTimeForCookies (minutes) {\n    var now = new Date();\n    var time = now.getTime();\n\n    time += 365 * 24 * 60 * 60 * 1000;\n    now.setTime(time);\n    return now;\n  }\n  \n    var getCookie = function(name) {\n    var i, x, y, ARRcookies = document.cookie.split(\";\");\n    for (i = 0; i < ARRcookies.length; i++) {\n      x = ARRcookies[i].substr(0, ARRcookies[i].indexOf(\"=\"));\n      y = ARRcookies[i].substr(ARRcookies[i].indexOf(\"=\") + 1);\n      x = x.replace(/^\\s+|\\s+$/g, \"\");\n      if (x == name) {\n        return unescape(y);\n      }\n    }\n  }\n  \n  if(getCookie('_ga_cid') !== undefined && getCookie('_ga_cid').typeOf == 'undefiend') return getCookie('_ga_cid');\n  else if(document.URL.indexOf('_ga') > -1) {\n    var hostInfo = splitHostname();\n    var tmphost = document.location.hostname.replace(hostInfo.subdomain + '.','').split('.').length;\n    var gaCookie = undefined;\n    for(var i=0;i<document.location.search.split('?').length;i++){\n      if(document.location.search.split('?')[i].indexOf('_ga') > -1){\n          gaCookie = document.location.search.split('?')[i].split('-')[1];\n        }\n    }\n    setCookie('_ga', 'GA1.' + tmphost + '.' + gaCookie, \n              setTimeForCookies(2), '/', '.' + hostInfo.domain + '.' + hostInfo.type);\n  }\n  else if(getCookie('_ga') !== undefined) return getCookie('_ga').substring(6);\n  else if(getCookie(' _ga') !== undefined) return getCookie(' _ga').substring(6);\n  else {\n    setCookie('_ga', 'GA1.' + tmphost + '.' + Math.floor(Math.random() * 9000000000) + 1000000000 + '.' + Math.floor(new Date().getTime() / 1000), setTimeForCookies(2), '/', '.' + hostInfo.domain + '.' + hostInfo.type);\n    return getCookie(' _ga').substring(6);\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1590026684688",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "variableId": "100",
+                "name": "dimensionsplit",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var url = document.location.href;\n\nfor(var i = 0;  i < url.split('&').length; i++){\n    if(url.split('&')[i].indexOf('cd1') > -1){\n     return {{dimension1}} = url.split('&')[i].substring(4) \n  }else if(url.split('&')[i].indexOf('cd2') > -1){\n     return {{dimension2}} = url.split('&')[i].substring(4) \n  }else if(url.split('&')[i].indexOf('cd3') > -1){\n     return {{dimension3}} = url.split('&')[i].substring(4) \n  }\n}  \n}"
+                    }
+                ],
+                "fingerprint": "1590732337496",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "type": "CLICK_CLASSES",
+                "name": "Click Classes"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "type": "VIDEO_URL",
+                "name": "Video URL"
+            },
+            {
+                "accountId": "6000365422",
+                "containerId": "30393019",
+                "type": "ELEMENT_VISIBILITY_RATIO",
+                "name": "Percent Visible"
+            }
+        ],
+        "fingerprint": "1590973396708",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6000365422/containers/30393019/versions/15?apiLink=version"
+    }
+}

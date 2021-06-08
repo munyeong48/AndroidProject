@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="user" />
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
+
+
+
+
+
+
+    <!--    <domain-config cleartextTrafficPermitted="true">-->
+    <!--        <domain includeSubdomains="true">http://211.49.99.88</domain>-->
+    <!--        <domain includeSubdomains="true">www.youtube.com</domain>-->
+    <!--        <domain includeSubdomains="true">https://www.googletagmanager.com</domain>-->
+    <!--        <domain includeSubdomains="true">www.googletagmanager.com</domain>-->
+    <!--        <domain includeSubdomains="true">www.eloqua.goldenplanet.co.kr</domain>-->
+    <!--        <domain includeSubdomains="true">https://www.google-analytics.com</domain>-->
+    <!--        <domain includeSubdomains="true">www.google-analytics.com</domain>-->
+    <!--    </domain-config>-->

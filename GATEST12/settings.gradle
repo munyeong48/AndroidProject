@@ -1,0 +1,2 @@
+rootProject.name='GATEST12'
+include ':app'

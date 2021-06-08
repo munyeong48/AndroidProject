@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Google Analytics">
+        <menu>
+        <item
+            android:id="@+id/nav_native_screenview"
+            android:icon="@drawable/screenview"
+            android:title="스크린 뷰/전자상거래" />
+        <item
+            android:id="@+id/nav_hybrid_screenview"
+            android:icon="@drawable/click_event"
+            android:title="하이브리드" />
+        </menu>
+        </item>
+    </group>
+
+    <item android:title="Firebase">
+        <menu>
+
+            <item
+                android:id="@+id/nav_firebase_analytics"
+                android:icon="@drawable/firebase_logo"
+                android:title="Analytics" />
+
+            <item
+                android:id="@+id/nav_firebase_cloud_messaging"
+                android:icon="@drawable/firebase_cloud_messaging"
+                android:title="클라우드 메시징" />
+
+        </menu>
+    </item>
+
+</menu>

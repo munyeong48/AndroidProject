@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/textview_detail"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="제품 상세 화면 입니다." />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_custom1_detail1"
+                    android:visibility="visible"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="맞춤 측정 기준 1번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_1"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension1" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail2"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 2번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_2"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension2" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail3"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 3번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_3"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension3" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail4"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 4번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_4"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension4" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail5"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 5번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_5"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension5" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail6"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 6번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_6"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension6" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail7"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 7번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_7"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension7" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail8"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 8번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_8"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension8" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail9"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 9번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_9"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension9" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail10"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 10번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_10"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension10" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail11"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 11번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_11"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension11" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail12"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 12번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_12"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension12" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail13"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 13번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_13"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension13" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail14"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 14번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_14"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension14" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail15"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 15번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_15"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension15" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail16"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 16번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_16"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension16" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail17"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 17번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_17"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension17" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail18"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 18번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_18"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension18" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail19"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 19번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_19"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension19" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/linearlayout_custom1_detail20"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="맞춤 측정 기준 20번" />
+
+                    <EditText
+                        android:id="@+id/et_cd_d_20"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        android:hint="CustomDimension20" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_customdimension_add_detail"
+                        android:layout_margin="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_shape"
+                        android:text="CustomDimension 추가"/>
+                    <Button
+                        android:id="@+id/btn_customdimension_remove_detail"
+                        android:layout_margin="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_shape"
+                        android:text="CustomDimension 제거"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_price"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="50dp"
+                    android:digits="0123456789"
+                    android:hint="상품 가격 입력" />
+
+                <Button
+                    android:id="@+id/btn_Purchase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/btn_shape"
+                    android:text="상품 구매" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

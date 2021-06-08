@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "400614801958",
+    "firebase_url": "https://jhprojectapp.firebaseio.com",
+    "project_id": "jhprojectapp",
+    "storage_bucket": "jhprojectapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400614801958:android:b2e265e9df2b4752069ce7",
+        "android_client_info": {
+          "package_name": "com.example.sjhapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "400614801958-fitmo8ev5oefa1vpcvi5mk9srhfki1l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKiuRmwzowyLonbsuwLZZXThgPzW4_v4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400614801958-fitmo8ev5oefa1vpcvi5mk9srhfki1l1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "400614801958-9mjacierd9rccfqpmeu7m6vo58cdid3l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.goldenplanet.objc-test"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.FirebaseCloudMessagingFragment">
+
+
+    <Button
+        android:text="GPTEST 구독"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:background="#FF6F61"
+        android:id="@+id/subscribeButton_GPTEST"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/subscribeButton"
+        android:layout_width="100dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="50dp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="날씨 구독"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="#002060"
+        android:id="@+id/subscribeButton"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/logTokenButton"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:background="#002060"
+        android:text="LogToken"
+        android:layout_toRightOf="@+id/subscribeButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="50dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

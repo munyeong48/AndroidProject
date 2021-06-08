@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Main3Activity">
+
+    <Button
+        android:id="@+id/w2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="myshin" />
+    <Button
+        android:id="@+id/w3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="naver" />
+
+
+    <WebView
+        android:id="@+id/webview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="naver 입니다." />
+
+    <WebView
+        android:id="@+id/webview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내가만든 page 입니다."/>
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/flowers">
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="event버튼" />
+
+    <Button
+        android:id="@+id/c1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전자상거래버튼" />
+
+    <RadioGroup
+        android:id="@+id/commerce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/im"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="impression" />
+
+        <RadioButton
+            android:id="@+id/cl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="click" />
+
+        <RadioButton
+            android:id="@+id/de"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="detail" />
+
+        <RadioButton
+            android:id="@+id/caa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cartadd" />
+
+        <RadioButton
+            android:id="@+id/cad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cartdelete" />
+
+        <RadioButton
+            android:id="@+id/o1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="order1" />
+
+        <RadioButton
+            android:id="@+id/o2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="order2" />
+
+        <RadioButton
+            android:id="@+id/o3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="order3" />
+
+        <RadioButton
+            android:id="@+id/co"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="complete" />
+
+        <RadioButton
+            android:id="@+id/re"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="refund" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/w1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="webview" />
+
+
+</LinearLayout>
