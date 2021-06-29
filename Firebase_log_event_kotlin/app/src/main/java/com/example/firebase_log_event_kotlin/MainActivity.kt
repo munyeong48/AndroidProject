@@ -3,7 +3,6 @@ package com.example.firebase_log_event_kotlin
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import android.util.Log
 import android.view.View
 import android.webkit.JavascriptInterface
@@ -15,6 +14,7 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
+    var user_pseudo_id = arrayOfNulls<String>(1)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,15 +32,18 @@ class MainActivity : AppCompatActivity() {
                 user_pseudo_id[0] = task.result
                 Log.v("Firebase Instance ID = ", user_pseudo_id[0])
                 //UserProperty
-                mFirebaseAnalytics!!.setUserProperty("user_property2", user_pseudo_id[0])
-                //UserId
-                mFirebaseAnalytics!!.setUserId(user_pseudo_id[0])
+                //UserProperty
+                //mFirebaseAnalytics.setUserProperty("user_property2",user_pseudo_id[0]);
 
-                // 여기 안으로 들어오면 onResume 단계가 되는듯
+                // 여기 안으로 들어오면 onResume 단계가 되는듯 그래서 screen_view 이벤트가 전송될 수 있음
                 val bundle = Bundle() //Bundle 객체 생성
-                bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "firebasek_main") //보고서-페이지 제목 및 화면 이름 or 이벤트-firebase_screen
-                bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "firebasek_main") //보고서-이벤트-screen_view-firebase_screen_class
-                mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle) //logEvent(이벤트 명, bundle)
+
+                bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "0610_main1") //보고서-페이지 제목 및 화면 이름 or 이벤트-firebase_screen
+
+                bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "0610_main1") //보고서-이벤트-screen_view-firebase_screen_class
+
+                mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle) //logEvent(이벤트 명, bundle
+
 
             }
         }
@@ -209,71 +212,139 @@ class MainActivity : AppCompatActivity() {
         @JavascriptInterface
         @Throws(JSONException::class)
         fun GA_DATA(JsonData: String?) { //Webview 내에서 자바스크립트 코드내에서 불러올 클래
+            //Webview 내에서 자바스크립트 코드내에서 불러올 클래
             val data = JSONObject(JsonData)
-            var sType = ""
-            var title: String? = "Hybrid_AOSmyshin3_"
-            var en = "FirebaseAnalytics.Event."
-            if (data.has("event_name")) en += data.getString("event_name").toUpperCase()
-            if (data.has("type")) sType = data.getString("type")
-            if (data.has("title")) title += data.getString("title")
-            if (sType.contains("P")) { //스크린뷰 일때
+            val bundle = Bundle() //Bundle 객체 생성
+
+            mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
+
+            var en: String? = ""
+            var title: String? = ""
+            var location: String? = ""
+            var type: String? = ""
+
+            if (data.has("eventname")) en = data.getString("eventname")
+            if (data.has("title")) title = data.getString("title")
+            if (data.has("location")) location = data.getString("location")
+            if (data.has("type")) type = data.getString("type")
+
+            // metric, dimension, userproperty
+
+            // metric, dimension, userproperty
+            val sIterator = data.keys()
+            while (sIterator.hasNext()) {
+                val a = sIterator.next().toString()
+                if (a.contains("dimension")) bundle.putString(a, data.getString(a))
+                if (a.contains("metric")) bundle.putString(a, data.getString(a))
+                if (a.contains("user_property")) mFirebaseAnalytics!!.setUserProperty(a, data.getString(a))
+            }
+            if (type!!.contains("P")) { //스크린뷰 일때
                 mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
                 val bundle = Bundle() //Bundle 객체 생성
-                bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "hybrid_k") //보고서-페이지 제목 및 화면 이름 or 이벤트-firebase_screen
-                bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "hybrid_k") //보고서-이벤트-screen_view-firebase_screen_class
+                bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, title) //보고서-페이지 제목 및 화면 이름 or 이벤트-firebase_screen
+                bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, location) //보고서-이벤트-screen_view-firebase_screen_class
                 mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle) //logEvent(이벤트 명, bundle)
             }
-            if (sType.contains("E")) { //이벤트일 때
-                val viewItemListParams = Bundle()
+           else{
+                //이벤트일 때
                 val bArr = arrayOfNulls<Bundle>(data.length())
                 var acnt = 0
-                for (i in 0 until data.length()) {
-                    val items = Bundle()
-                    var item: JSONObject? = null
-                    if (data.has(i.toString())) item = data.getJSONObject(i.toString())
-                    if (item == null) {
-                        break
-                    }
-                    if (item.has("item_id")) items.putString(FirebaseAnalytics.Param.ITEM_ID, item.getString("item_id"))
-                    if (item.has("item_name")) items.putString(FirebaseAnalytics.Param.ITEM_NAME, item.getString("item_name"))
-                    if (item.has("item_list_name")) items.putString(FirebaseAnalytics.Param.ITEM_LIST_NAME, item.getString("item_list_name"))
-                    if (item.has("item_list_id")) items.putString(FirebaseAnalytics.Param.ITEM_LIST_ID, item.getString("item_list_id"))
-                    if (item.has("index")) items.putString(FirebaseAnalytics.Param.INDEX, item.getString("index"))
-                    if (item.has("item_brand")) items.putString(FirebaseAnalytics.Param.ITEM_BRAND, item.getString("item_brand"))
-                    if (item.has("item_category")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, item.getString("item_category"))
-                    if (item.has("item_category2")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY2, item.getString("item_category2"))
-                    if (item.has("item_category3")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY3, item.getString("item_category3"))
-                    if (item.has("item_category4")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY4, item.getString("item_category4"))
-                    if (item.has("item_category5")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY5, item.getString("item_category5"))
-                    if (item.has("item_variant")) items.putString(FirebaseAnalytics.Param.ITEM_VARIANT, item.getString("item_variant"))
-                    if (item.has("affiliation")) items.putString(FirebaseAnalytics.Param.AFFILIATION, item.getString("affiliation"))
-                    if (item.has("discount")) items.putString(FirebaseAnalytics.Param.DISCOUNT, item.getString("discount"))
-                    if (item.has("coupon")) items.putString(FirebaseAnalytics.Param.COUPON, item.getString("coupon"))
-                    if (item.has("price")) items.putString(FirebaseAnalytics.Param.PRICE, item.getString("price"))
-                    if (item.has("currency")) items.putString(FirebaseAnalytics.Param.CURRENCY, item.getString("currency"))
-                    if (item.has("quantity")) items.putString(FirebaseAnalytics.Param.QUANTITY, item.getString("quantity"))
-                    if (item.has("item_id")) { //type 등 모두 포함한 상태의 data에서 상품만 선택
-                        items.putLong(FirebaseAnalytics.Param.INDEX, (i + 1).toLong())
+                if(data.has("transaction")) {
+                    val transaction = data.getJSONObject("transaction")
+                    if (transaction.has("transaction_id")) bundle.putString(FirebaseAnalytics.Param.TRANSACTION_ID, transaction.getString("transaction_id"))
+                    if (transaction.has("affiliation")) bundle.putString(FirebaseAnalytics.Param.AFFILIATION, transaction.getString("affiliation"))
+                    if (transaction.has("value")) bundle.putDouble(FirebaseAnalytics.Param.VALUE, transaction.getDouble("value"))
+                    if (transaction.has("currency")) bundle.putString(FirebaseAnalytics.Param.CURRENCY, transaction.getString("currency"))
+                    if (transaction.has("tax")) bundle.putDouble(FirebaseAnalytics.Param.TAX, transaction.getDouble("tax"))
+                    if (transaction.has("shipping")) bundle.putDouble(FirebaseAnalytics.Param.SHIPPING, transaction.getDouble("shipping"))
+                    if (transaction.has("shipping_tier")) bundle.putString(FirebaseAnalytics.Param.SHIPPING_TIER, transaction.getString("shipping_tier"))
+                    if (transaction.has("payment_type")) bundle.putString(FirebaseAnalytics.Param.PAYMENT_TYPE, transaction.getString("payment_type"))
+                    if (transaction.has("coupon")) bundle.putString(FirebaseAnalytics.Param.COUPON, transaction.getString("coupon"))
+                    if (transaction.has("location_id")) bundle.putString(FirebaseAnalytics.Param.LOCATION_ID, transaction.getString("location_id"))
+                    if (transaction.has("item_list_name")) bundle.putString(FirebaseAnalytics.Param.ITEM_LIST_NAME, transaction.getString("item_list_name"))
+                    if (transaction.has("item_list_id")) bundle.putString(FirebaseAnalytics.Param.ITEM_LIST_ID, transaction.getString("item_list_id"))
+                }
+                if(data.has("Products")) {
+                    val products = data.getJSONArray("Products")
+                    for (i in 0 until products.length()) {
+                        var items: Bundle? = Bundle()
+                        var item: JSONObject? = null
+                        item = products.getJSONObject(i.toString().toInt())
+                        if (item == null) {
+                            break
+                        }
+                        if (item.has("item_id")) items!!.putString(FirebaseAnalytics.Param.ITEM_ID, item.getString("item_id"))
+                        if (item.has("item_name")) items!!.putString(FirebaseAnalytics.Param.ITEM_NAME, item.getString("item_name"))
+                        if (item.has("item_list_name")) items!!.putString(FirebaseAnalytics.Param.ITEM_LIST_NAME, item.getString("item_list_name"))
+                        if (item.has("item_list_id")) items!!.putString(FirebaseAnalytics.Param.ITEM_LIST_ID, item.getString("item_list_id"))
+                        if (item.has("index")) items!!.putLong(FirebaseAnalytics.Param.INDEX, item.getLong("index"))
+                        if (item.has("item_brand")) items!!.putString(FirebaseAnalytics.Param.ITEM_BRAND, item.getString("item_brand"))
+                        if (item.has("item_category")) items!!.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, item.getString("item_category"))
+                        if (item.has("item_category2")) items!!.putString(FirebaseAnalytics.Param.ITEM_CATEGORY2, item.getString("item_category2"))
+                        if (item.has("item_category3")) items!!.putString(FirebaseAnalytics.Param.ITEM_CATEGORY3, item.getString("item_category3"))
+                        if (item.has("item_category4")) items!!.putString(FirebaseAnalytics.Param.ITEM_CATEGORY4, item.getString("item_category4"))
+                        if (item.has("item_category5")) items!!.putString(FirebaseAnalytics.Param.ITEM_CATEGORY5, item.getString("item_category5"))
+                        if (item.has("item_variant")) items!!.putString(FirebaseAnalytics.Param.ITEM_VARIANT, item.getString("item_variant"))
+                        if (item.has("affiliation")) items!!.putString(FirebaseAnalytics.Param.AFFILIATION, item.getString("affiliation"))
+                        if (item.has("discount")) items!!.putDouble(FirebaseAnalytics.Param.DISCOUNT, item.getDouble("discount"))
+                        if (item.has("coupon")) items!!.putString(FirebaseAnalytics.Param.COUPON, item.getString("coupon"))
+                        if (item.has("price")) items!!.putDouble(FirebaseAnalytics.Param.PRICE, item.getDouble("price"))
+                        if (item.has("currency")) items!!.putString(FirebaseAnalytics.Param.CURRENCY, item.getString("currency"))
+                        if (item.has("quantity")) items!!.putLong(FirebaseAnalytics.Param.QUANTITY, item.getLong("quantity"))
+
+                        // item 내에서의 diemension 분기
+//                    Iterator<String> Iterator= item.keys();
+//                    while(Iterator.hasNext()) {
+//                        try {
+//                            String a = String.valueOf(Iterator.next());
+//                            if (a.contains("dimension")) items.putString(a, item.getString(a));
+//                            if (a.contains("metric")) items.putString(a, item.getString(a));
+//                        }
+//                        catch (Exception e){
+//                            e.printStackTrace();
+//                        }
+//                    }
                         bArr[i] = items
+                        items = null
                         acnt++
                     }
-                }
-                val newbArr = arrayOfNulls<Bundle>(acnt)
-                for (j in newbArr.indices) {
-                    if (!bArr[j]!!.isEmpty || bArr[j] != null) {
-                        newbArr[j] = bArr[j] //newbArr 이 상품 bundle
+                    val newbArr = arrayOfNulls<Bundle>(acnt)
+                    for (j in newbArr.indices) {
+                        if (!bArr[j]!!.isEmpty || bArr[j] != null) {
+                            newbArr[j] = bArr[j] //newbArr 이 상품 bundle
+                        }
                     }
+
+                    bundle.putParcelableArray(FirebaseAnalytics.Param.ITEMS, newbArr)
                 }
-                viewItemListParams.putParcelableArray(FirebaseAnalytics.Param.ITEMS, newbArr)
-                viewItemListParams.putString(FirebaseAnalytics.Param.ITEM_LIST_ID, "qsw")
-                viewItemListParams.putString(FirebaseAnalytics.Param.ITEM_LIST_NAME, "qsw")
-                mFirebaseAnalytics!!.logEvent("view_item_list", viewItemListParams)
+
+                if (en!!.contains("view_item_list")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.VIEW_ITEM_LIST, bundle)
+                } else if (en!!.contains("select_item")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.SELECT_ITEM, bundle)
+                } else if (en!!.contains("view_item")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.VIEW_ITEM, bundle)
+                } else if (en!!.contains("add_to_cart")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.ADD_TO_CART, bundle)
+                } else if (en!!.contains("add_to_wishlist")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.ADD_TO_WISHLIST, bundle)
+                } else if (en!!.contains("remove_from_cart")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.REMOVE_FROM_CART, bundle)
+                } else if (en!!.contains("view_cart")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.VIEW_CART, bundle)
+                } else if (en!!.contains("begin_checkout")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.BEGIN_CHECKOUT, bundle)
+                } else if (en!!.contains("add_shipping_info")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.ADD_SHIPPING_INFO, bundle)
+                } else if (en!!.contains("add_payment_info")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.ADD_PAYMENT_INFO, bundle)
+                } else if (en!!.contains("purchase")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.PURCHASE, bundle)
+                } else if (en!!.contains("refund")) {
+                    mFirebaseAnalytics!!.logEvent(FirebaseAnalytics.Event.REFUND, bundle)
+                } else mFirebaseAnalytics!!.logEvent(en!!, bundle)
+
             }
         }
-    }
-    companion object {
-        var user_pseudo_id = arrayOfNulls<String>(1)
-        var a = "qqa"
-        var b = "qqa"
     }
 }

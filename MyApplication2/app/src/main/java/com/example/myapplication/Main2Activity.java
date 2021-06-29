@@ -3,8 +3,11 @@ package com.example.myapplication;
 // main2 실행 후 main 실행 후 main3 실행순
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.work.Worker;
+import androidx.work.WorkerParameters;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -80,106 +83,6 @@ public class Main2Activity extends AppCompatActivity implements InstallReferrerS
         setContentView(R.layout.activity_main2);
         firebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        /*// firebaseinstance id 값 가져오기 전 웹뷰로드시 id값을 가져가지 못해 _ga_cid=null 로 찍히게 된다.
-
-        final WebView mWebView1 = (WebView) findViewById(R.id.webview1);
-        mWebView1.setWebViewClient(new WebViewClient()); // 클릭시 새창 안뜨게
-        mWebView1.setWebChromeClient(new WebChromeClient());
-        mWebView1.getSettings().setJavaScriptEnabled(true);
-
-        mWebView1.loadUrl("http://210.114.9.22/GA_part/myshin/"); // 웹뷰에 표시할 웹사이트 주소, 웹뷰 시작
-        StringBuilder cookie = new StringBuilder("_ga_cid"); //cookie라는 string 생성
-        cookie.append("=").append(GoogleAnalytics.user_pseudo_id[0]); //cookie에 userid append
-        cookie.append("; path=/");
-
-        final CookieManager cookieManager = CookieManager.getInstance(); //singletone 쿠키매니저 인스턴스 get
-        cookieManager.setAcceptCookie(true); // 쿠키를 보내거나 받는거를 true
-        cookieManager.setAcceptThirdPartyCookies(mWebView1, true); //웹뷰에서 타사 쿠키를 설정할 수 있는지 여부설정
-        cookieManager.setCookie("http://210.114.9.22/GA_part/myshin/", cookie.toString()); //  주어진 url에 대한 쿠키 설정
-        */
-
-        // Param 관련 설명 링크 : https://firebase.google.com/docs/dynamic-links/android/create?authuser=0
-        DynamicLink dynamicLink = FirebaseDynamicLinks.getInstance().createDynamicLink()
-                .setLink(Uri.parse("https://kotlinbuilder.page.link/1srt")) //https://javamyshin.page.link/6Suk
-                .setDomainUriPrefix("https://kotlinbuilder.page.link")
-                .setAndroidParameters(new DynamicLink.AndroidParameters.Builder()
-                        .build()) //set minimum 넣을시 앱 무한로딩 발생
-                .setGoogleAnalyticsParameters(
-                        new DynamicLink.GoogleAnalyticsParameters.Builder()
-                                .setSource("20210105")
-                                .setMedium("20210105")
-                                .setCampaign("20210105")
-                                .build())
-                .setItunesConnectAnalyticsParameters(
-                        new DynamicLink.ItunesConnectAnalyticsParameters.Builder()
-                                .setProviderToken("20210105")
-                                .setCampaignToken("20210105")
-                                .build())
-                .setSocialMetaTagParameters(
-                        new DynamicLink.SocialMetaTagParameters.Builder()
-                                .setTitle("20210105")
-                                .setDescription("20210105")
-                                .build())
-
-
-                .buildDynamicLink();
-        Uri dynamicLinkUri = dynamicLink.getUri();
-        System.out.println("dynamiclink " +dynamicLinkUri.toString());
-
-
-
-        //기본적으로 짧은 동적 링크는 17자(영문 기준) 링크 서픽스와 함께 생성되어 누군가가 유효한 동적 링크를 추측하는 것이 거의 불가능합니다.
-        // 누군가가 짧은 링크를 추측해도 괜찮다면 고유성을 위해 꼭 필요한 만큼의 길이로 서픽스를 만드는 것이 좋을 수 있으며,
-        // ShortDynamicLink.Suffix.SHORT를 buildShortDynamicLink 메서드에 전달하면 됩니다.
-
-        /*
-        Task<ShortDynamicLink> shortLinkTask = FirebaseDynamicLinks.getInstance().createDynamicLink()
-                .setLink(Uri.parse("https://kotlinbuilder.page.link/6BG2"))
-                .setDomainUriPrefix("https://javamyshin.page.link/")
-                .setAndroidParameters(new DynamicLink.AndroidParameters.Builder().build())
-                .setIosParameters(new DynamicLink.IosParameters.Builder("com.example.ios").build())
-                // Set parameters
-                // ...
-                .buildShortDynamicLink() //.buildShortDynamicLink(ShortDynamicLink.Suffix.SHORT);
-                .addOnCompleteListener(this, new OnCompleteListener<ShortDynamicLink>() {
-                    @Override
-                    public void onComplete(@NonNull Task<ShortDynamicLink> task) {
-                        if (task.isSuccessful()) {
-                            // Short link created
-                            Uri shortLink = task.getResult().getShortLink();
-                            Uri flowchartLink = task.getResult().getPreviewLink();
-                            String s;
-                        } else {
-                            // Error
-                            // ...
-                        }
-                    }
-                });
-
-
-         */
-
-        //긴 동적 링크 축약
-        /*
-        Task<ShortDynamicLink> shortLinkTask = FirebaseDynamicLinks.getInstance().createDynamicLink()
-                .setLongLink(Uri.parse("https://kotlinbuilder.page.link/EwdR"))
-                .buildShortDynamicLink()
-                .addOnCompleteListener(this, new OnCompleteListener<ShortDynamicLink>() {
-                    @Override
-                    public void onComplete(@NonNull Task<ShortDynamicLink> task) {
-                        if (task.isSuccessful()) {
-                            // Short link created
-                            Uri shortLink = task.getResult().getShortLink();
-                            Uri flowchartLink = task.getResult().getPreviewLink();
-                        } else {
-                            // Error
-                            // ...
-                        }
-                    }
-                });
-        */
-
-
         FirebaseAnalytics.getInstance(this).getAppInstanceId().addOnCompleteListener(new OnCompleteListener<String>() {
             @Override
             public void onComplete(@NonNull Task<String> task) {
@@ -209,6 +112,11 @@ public class Main2Activity extends AppCompatActivity implements InstallReferrerS
                     //new screenname("Main2","Main2Activity"); // 이렇게 해도 생성자를 통해 setting 가능
                     setSn_previous("Main2","Main2Activity");
 
+//                    Intent myIntent;
+//                    String url = "http://www.naver.com";
+//                    myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+//                    startActivity(myIntent);
+
                     Intent intent = new Intent(Main2Activity.this, MainActivity.class); // firebase 인스턴스 실행전 webview로드코드 설정했다면 이후 이코드가 실행되어 다음 페이지로 넘어감
                     startActivity(intent);
 
@@ -230,28 +138,7 @@ public class Main2Activity extends AppCompatActivity implements InstallReferrerS
                 }
             }
         });
-/*
-        FirebaseDynamicLinks.getInstance()
-                .getDynamicLink(getIntent())
-                .addOnSuccessListener(this, new OnSuccessListener<PendingDynamicLinkData>() {
-                    @Override
-                    public void onSuccess(PendingDynamicLinkData pendingDynamicLinkData) {
-                        Uri deepLink = null;
-                        if (pendingDynamicLinkData != null) {
-                            deepLink = pendingDynamicLinkData.getLink();
-                            String a;
-                        }
-                    }
-                })
-                .addOnFailureListener(this, new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        e.printStackTrace();
-                    }
-                });
 
- */
-        //다이나믹링크 받는 코드 넣고 4번실행, 빼고 2번실행
     }
 
 //    class GAID extends AsyncTask<Void,Void,String> {
@@ -270,8 +157,7 @@ public class Main2Activity extends AppCompatActivity implements InstallReferrerS
 //            startActivity(intent);
 //        }
 //    }
-
-//앱 설치하고 처음실행했는지 확인하는 함수
+    //앱 설치하고 처음실행했는지 확인하는 함수
     public boolean CheckAppFirstExecute() {
         SharedPreferences pref = getSharedPreferences("isFirst", Activity.MODE_PRIVATE);
         boolean isFirst = pref.getBoolean("isFirst", false);

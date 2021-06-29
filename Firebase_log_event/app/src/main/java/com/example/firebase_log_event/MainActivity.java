@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
                     // 여기 안으로 들어오면 onResume 단계가 되는듯 그래서 screen_view 이벤트가 전송될 수 있음
 
                     Bundle bundle = new Bundle(); //Bundle 객체 생성
-                    bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "0512"); //보고서-페이지 제목 및 화면 이름 or 이벤트-firebase_screen
-                    bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "0512"); //보고서-이벤트-screen_view-firebase_screen_class
+                    bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, "0610_main1"); //보고서-페이지 제목 및 화면 이름 or 이벤트-firebase_screen
+                    bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, "0610_main1"); //보고서-이벤트-screen_view-firebase_screen_class
                     mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle); //logEvent(이벤트 명, bundle
                     
                     //mFirebaseAnalytics.logEvent(FirebaseAnalytics.Param.);
@@ -362,46 +362,80 @@ public class MainActivity extends AppCompatActivity {
 
                 Bundle [] bArr = new Bundle[data.length()];
                 int acnt =0;
-                JSONObject transaction = data.getJSONObject("transaction");
-                if (transaction.has("transaction_id")) bundle.putString(FirebaseAnalytics.Param.TRANSACTION_ID,transaction.getString("transaction_id"));
-                if (transaction.has("affiliation")) bundle.putString(FirebaseAnalytics.Param.AFFILIATION,transaction.getString("affiliation"));
-                if (transaction.has("value")) bundle.putDouble(FirebaseAnalytics.Param.VALUE,transaction.getDouble("value"));
-                if (transaction.has("currency")) bundle.putString(FirebaseAnalytics.Param.CURRENCY,transaction.getString("currency"));
-                if (transaction.has("tax")) bundle.putDouble(FirebaseAnalytics.Param.TAX,transaction.getDouble("tax"));
-                if (transaction.has("shipping")) bundle.putDouble(FirebaseAnalytics.Param.SHIPPING,transaction.getDouble("shipping"));
-                if (transaction.has("shipping_tier")) bundle.putString(FirebaseAnalytics.Param.SHIPPING_TIER,transaction.getString("shipping_tier"));
-                if (transaction.has("payment_type")) bundle.putString(FirebaseAnalytics.Param.PAYMENT_TYPE,transaction.getString("payment_type"));
-                if (transaction.has("coupon")) bundle.putString(FirebaseAnalytics.Param.COUPON,transaction.getString("coupon"));
-                if (transaction.has("location_id")) bundle.putString(FirebaseAnalytics.Param.LOCATION_ID,transaction.getString("location_id"));
-                if (transaction.has("item_list_name")) bundle.putString(FirebaseAnalytics.Param.ITEM_LIST_NAME,transaction.getString("item_list_name"));
-                if (transaction.has("item_list_id")) bundle.putString(FirebaseAnalytics.Param.ITEM_LIST_ID,transaction.getString("item_list_id"));
+                if(data.has("transaction")) {
+                    JSONObject transaction = data.getJSONObject("transaction");
+                    if (transaction.has("transaction_id"))
+                        bundle.putString(FirebaseAnalytics.Param.TRANSACTION_ID, transaction.getString("transaction_id"));
+                    if (transaction.has("affiliation"))
+                        bundle.putString(FirebaseAnalytics.Param.AFFILIATION, transaction.getString("affiliation"));
+                    if (transaction.has("value"))
+                        bundle.putDouble(FirebaseAnalytics.Param.VALUE, transaction.getDouble("value"));
+                    if (transaction.has("currency"))
+                        bundle.putString(FirebaseAnalytics.Param.CURRENCY, transaction.getString("currency"));
+                    if (transaction.has("tax"))
+                        bundle.putDouble(FirebaseAnalytics.Param.TAX, transaction.getDouble("tax"));
+                    if (transaction.has("shipping"))
+                        bundle.putDouble(FirebaseAnalytics.Param.SHIPPING, transaction.getDouble("shipping"));
+                    if (transaction.has("shipping_tier"))
+                        bundle.putString(FirebaseAnalytics.Param.SHIPPING_TIER, transaction.getString("shipping_tier"));
+                    if (transaction.has("payment_type"))
+                        bundle.putString(FirebaseAnalytics.Param.PAYMENT_TYPE, transaction.getString("payment_type"));
+                    if (transaction.has("coupon"))
+                        bundle.putString(FirebaseAnalytics.Param.COUPON, transaction.getString("coupon"));
+                    if (transaction.has("location_id"))
+                        bundle.putString(FirebaseAnalytics.Param.LOCATION_ID, transaction.getString("location_id"));
+                    if (transaction.has("item_list_name"))
+                        bundle.putString(FirebaseAnalytics.Param.ITEM_LIST_NAME, transaction.getString("item_list_name"));
+                    if (transaction.has("item_list_id"))
+                        bundle.putString(FirebaseAnalytics.Param.ITEM_LIST_ID, transaction.getString("item_list_id"));
+                }
+                if(data.has("Products")) {
+                    JSONArray products = data.getJSONArray("Products");
+                    for (int i = 0; i < products.length(); i++) {
+                        Bundle items = new Bundle();
+                        JSONObject item = null;
+                        item = products.getJSONObject(Integer.parseInt(String.valueOf(i)));
+                        if (item == null) {
+                            break;
+                        }
+                        if (item.has("item_id"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_ID, item.getString("item_id"));
+                        if (item.has("item_name"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_NAME, item.getString("item_name"));
+                        if (item.has("item_list_name"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_LIST_NAME, item.getString("item_list_name"));
+                        if (item.has("item_list_id"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_LIST_ID, item.getString("item_list_id"));
+                        if (item.has("index"))
+                            items.putLong(FirebaseAnalytics.Param.INDEX, item.getLong("index"));
+                        if (item.has("item_brand"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_BRAND, item.getString("item_brand"));
+                        if (item.has("item_category"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, item.getString("item_category"));
+                        if (item.has("item_category2"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY2, item.getString("item_category2"));
+                        if (item.has("item_category3"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY3, item.getString("item_category3"));
+                        if (item.has("item_category4"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY4, item.getString("item_category4"));
+                        if (item.has("item_category5"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY5, item.getString("item_category5"));
+                        if (item.has("item_variant"))
+                            items.putString(FirebaseAnalytics.Param.ITEM_VARIANT, item.getString("item_variant"));
+                        if (item.has("affiliation"))
+                            items.putString(FirebaseAnalytics.Param.AFFILIATION, item.getString("affiliation"));
+                        if (item.has("discount"))
+                            items.putDouble(FirebaseAnalytics.Param.DISCOUNT, item.getDouble("discount"));
+                        if (item.has("coupon"))
+                            items.putString(FirebaseAnalytics.Param.COUPON, item.getString("coupon"));
+                        if (item.has("price"))
+                            items.putDouble(FirebaseAnalytics.Param.PRICE, item.getDouble("price"));
+                        if (item.has("currency"))
+                            items.putString(FirebaseAnalytics.Param.CURRENCY, item.getString("currency"));
+                        if (item.has("quantity"))
+                            items.putLong(FirebaseAnalytics.Param.QUANTITY, item.getLong("quantity"));
 
-                JSONArray products = data.getJSONArray("Products");
-                for (int i=0 ;i< products.length(); i++){
-                    Bundle items = new Bundle();
-                    JSONObject item = null;
-                    item = products.getJSONObject(Integer.parseInt(String.valueOf(i)));
-                    if (item == null) {break;}
-                    if (item.has("item_id")) items.putString(FirebaseAnalytics.Param.ITEM_ID,item.getString("item_id"));
-                    if (item.has("item_name")) items.putString(FirebaseAnalytics.Param.ITEM_NAME,item.getString("item_name"));
-                    if (item.has("item_list_name")) items.putString(FirebaseAnalytics.Param.ITEM_LIST_NAME,item.getString("item_list_name"));
-                    if (item.has("item_list_id")) items.putString(FirebaseAnalytics.Param.ITEM_LIST_ID,item.getString("item_list_id"));
-                    if (item.has("index")) items.putLong(FirebaseAnalytics.Param.INDEX,item.getLong("index"));
-                    if (item.has("item_brand")) items.putString(FirebaseAnalytics.Param.ITEM_BRAND,item.getString("item_brand"));
-                    if (item.has("item_category")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY,item.getString("item_category"));
-                    if (item.has("item_category2")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY2,item.getString("item_category2"));
-                    if (item.has("item_category3")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY3,item.getString("item_category3"));
-                    if (item.has("item_category4")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY4,item.getString("item_category4"));
-                    if (item.has("item_category5")) items.putString(FirebaseAnalytics.Param.ITEM_CATEGORY5,item.getString("item_category5"));
-                    if (item.has("item_variant")) items.putString(FirebaseAnalytics.Param.ITEM_VARIANT,item.getString("item_variant"));
-                    if (item.has("affiliation")) items.putString(FirebaseAnalytics.Param.AFFILIATION,item.getString("affiliation"));
-                    if (item.has("discount")) items.putDouble(FirebaseAnalytics.Param.DISCOUNT,item.getDouble("discount"));
-                    if (item.has("coupon")) items.putDouble(FirebaseAnalytics.Param.COUPON,item.getDouble("coupon"));
-                    if (item.has("price")) items.putDouble(FirebaseAnalytics.Param.PRICE,item.getDouble("price"));
-                    if (item.has("currency")) items.putDouble(FirebaseAnalytics.Param.CURRENCY,item.getDouble("currency"));
-                    if (item.has("quantity")) items.putLong(FirebaseAnalytics.Param.QUANTITY,item.getLong("quantity"));
-
-                    // item 내에서의 diemension 분기 
+                        // item 내에서의 diemension 분기
 //                    Iterator<String> Iterator= item.keys();
 //                    while(Iterator.hasNext()) {
 //                        try {
@@ -414,20 +448,18 @@ public class MainActivity extends AppCompatActivity {
 //                        }
 //                    }
 
-                    bArr[i] = items;
-                    items=null;
-                    acnt++;
-                }
-                Bundle [] newbArr = new Bundle[acnt];
-                for(int j=0; j<newbArr.length;j++)
-                {
-                    if(!bArr[j].isEmpty() || bArr[j] != null) {
-                        newbArr[j] = bArr[j]; //newbArr 이 상품 bundle
+                        bArr[i] = items;
+                        items = null;
+                        acnt++;
                     }
-                }
-
+                    Bundle[] newbArr = new Bundle[acnt];
+                    for (int j = 0; j < newbArr.length; j++) {
+                        if (!bArr[j].isEmpty() || bArr[j] != null) {
+                            newbArr[j] = bArr[j]; //newbArr 이 상품 bundle
+                        }
+                    }
                 bundle.putParcelableArray(FirebaseAnalytics.Param.ITEMS,newbArr);
-
+                }
                 if (en.contains("view_item_list")) {mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.VIEW_ITEM_LIST, bundle);}
                 else if (en.contains("select_item")) {mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM, bundle);}
                 else if (en.contains("view_item")) {mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.VIEW_ITEM, bundle);}

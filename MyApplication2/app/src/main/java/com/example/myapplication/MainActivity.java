@@ -1,11 +1,22 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.work.ListenableWorker;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.PeriodicWorkRequest;
+import androidx.work.WorkContinuation;
+import androidx.work.WorkManager;
+import androidx.work.WorkRequest;
+import androidx.work.Worker;
+import androidx.work.WorkerParameters;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -17,6 +28,7 @@ import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static com.example.myapplication.producer.abc;
 import static com.example.myapplication.screenname.getSn_previous;
@@ -92,7 +104,6 @@ public class MainActivity extends AppCompatActivity{
         Thread pageThread = new Thread(new GoogleAnalytics.gaThread(pageMap));
         pageThread.start();
 
-
         bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,7 +139,7 @@ public class MainActivity extends AppCompatActivity{
                 r_1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i =1; i<3;i++){
+                        for(int i =1; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<>();
                             mapmap.put("ea", "impression");
@@ -139,7 +150,7 @@ public class MainActivity extends AppCompatActivity{
                 r_2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i =1; i<3;i++){
+                        for(int i =1; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<String, String>();
                             mapmap.put("ea", "click");
@@ -150,7 +161,7 @@ public class MainActivity extends AppCompatActivity{
                 r_3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i =1; i<11;i++){
+                        for(int i =1; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<String, String>();
                             mapmap.put("ea", "detail");
@@ -161,7 +172,7 @@ public class MainActivity extends AppCompatActivity{
                 r_4.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i =1; i<11;i++){
+                        for(int i =1; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<String, String>();
                             mapmap.put("ea", "cartadd");
@@ -172,7 +183,7 @@ public class MainActivity extends AppCompatActivity{
                 r_5.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i =1; i<11;i++){
+                        for(int i =1; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<String, String>();
                             mapmap.put("ea", "cartdelete");
@@ -183,7 +194,7 @@ public class MainActivity extends AppCompatActivity{
                 r_6.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i =1; i<11;i++){
+                        for(int i =1; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<String, String>();
                             mapmap.put("ea", "order1");
@@ -194,7 +205,7 @@ public class MainActivity extends AppCompatActivity{
                 r_7.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i =0; i<10;i++){
+                        for(int i =0; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<String, String>();
                             mapmap.put("ea", "order2");
@@ -205,7 +216,7 @@ public class MainActivity extends AppCompatActivity{
                 r_8.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i =1; i<11;i++){
+                        for(int i =1; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<String, String>();
                             mapmap.put("ea", "order3");
@@ -216,7 +227,7 @@ public class MainActivity extends AppCompatActivity{
                 r_9.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        for(int i =1; i<11;i++){
+                        for(int i =1; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<String, String>();
                             mapmap.put("ea", "complete");
@@ -227,42 +238,16 @@ public class MainActivity extends AppCompatActivity{
                 r_10.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int a=11; ////////// 20개와 30개 구매시 환불은 처음 10개의 상품 종류만 환불
-                        if(a!=21 || a!=31){
-                        for(int i =1; i<a;i++){
+                        for(int i =1; i<2;i++){
                             Map<String, String> mapmap = null;
                             mapmap = new LinkedHashMap<String, String>();
                             mapmap.put("ea", "refund");
                             Thread commerceThread = new Thread(new GoogleAnalytics.gaThread(abc(i, mapmap)));
-                            commerceThread.start();}}
-                        else{
-                                for(int i =1; i<11;i++){
-                                Map<String, String> mapmap = null;
-                                mapmap = new LinkedHashMap<String, String>();
-                                mapmap.put("ea", "refund");
-                                Thread commerceThread = new Thread(new GoogleAnalytics.gaThread(abc(i, mapmap)));
-                                commerceThread.start();}}
+                            commerceThread.start();
+                        }
                         }});
             }
         });
     }
-
-
-    //    class GAID extends AsyncTask<Void,Void,String> {
-//        @Override protected String doInBackground(Void... voids) {
-//            String advertisingId = "";
-//            try{
-//                AdvertisingIdClient.Info info = AdvertisingIdClient.getAdvertisingIdInfo(MainActivity.this);
-//                advertisingId = info.getId();
-//            }catch (GooglePlayServicesNotAvailableException | GooglePlayServicesRepairableException | IOException e){ e.printStackTrace(); }
-//            return advertisingId;
-//        }
-//        @Override protected void onPostExecute(String id) {
-//            super.onPostExecute(id);
-//            Intent intent = new Intent(MainActivity.this, MainActivity.class);
-//            intent.putExtra("GAID",id);
-//            startActivity(intent);
-//        }
-//    }
 
 }
